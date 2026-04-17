@@ -1,0 +1,54 @@
+<mxfile host="drawio-plugin" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" modified="2026-04-15T22:46:40.133Z" version="22.1.22" etag="I-7NLwgBpxJXzM2dmkHT" type="embed">
+  <diagram name="DFD_AsIs_PatientRegistration" id="dfd_patient_reg">
+    <mxGraphModel dx="810" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="patient" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;Пациент&lt;/span&gt;" style="shape=ellipse;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="50" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="reception" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;Сотрудник&lt;br&gt;ресепшена&lt;/span&gt;" style="shape=ellipse;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="300" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="process_record" value="1.0&#xa;Запись пациента&#xa;к специалисту" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="280" y="330" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="store_journal" value="Journal-Doctor-FIO.xls" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="550" y="140" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="store_patients" value="Patients.xls" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="550" y="330" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="store_files" value="Data file&#xa;(PDF/JPG/Word)" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="550" y="460" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="doctor" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;Врач&lt;/span&gt;" style="shape=ellipse;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="300" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_patient_to_process" value="ФИО, телефон,&#xa;жалобы" style="endArrow=classic;html=1;strokeColor=#333333;fontSize=10" parent="1" source="patient" target="process_record" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_reception_to_process" value="Ввод данных" style="endArrow=classic;html=1;strokeColor=#333333;fontSize=10" parent="1" source="reception" target="process_record" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_process_to_journal" value="Запись к врачу" style="endArrow=classic;html=1;strokeColor=#333333;fontSize=10" parent="1" source="process_record" target="store_journal" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_process_to_patients" value="Регистрация&#xa;пациента" style="endArrow=classic;html=1;strokeColor=#333333;fontSize=10" parent="1" source="process_record" target="store_patients" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_process_to_files" value="Скан договора,&#xa;мед. данные" style="endArrow=classic;html=1;strokeColor=#333333;fontSize=10" parent="1" source="process_record" target="store_files" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_doctor_to_journal" value="Просмотр/&#xa;редактирование" style="endArrow=classic;html=1;strokeColor=#333333;fontSize=10;dashed=1" parent="1" source="doctor" target="store_journal" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="550" />
+              <mxPoint x="250" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
