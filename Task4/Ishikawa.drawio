@@ -1,0 +1,76 @@
+<mxfile host="drawio-plugin" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" modified="2026-04-17T23:15:12.586Z" version="22.1.22" etag="Jp9iKQjltYO7MlkbdXlU" type="embed">
+  <diagram name="Ishikawa_Migration" id="ishikawa-migration">
+    <mxGraphModel dx="1441" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Диаграмма Исикавы: узкие места миграции «Медикаменте»" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="40" y="20" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="head" value="Эффект (проблема):&#xa;снижение производительности&#xa;и стабильности при миграции&#xa;на микросервисы и API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=11;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="920" y="280" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="spine" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="120" y="318" width="780" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="spineArrow" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="spine" target="head" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="Инфраструктура&#xa;• нехватка CPU/RAM/диска&#xa;• сеть филиал ↔ ЦОД&#xa;• отказоустойчивость БД" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left" parent="1" vertex="1">
+          <mxGeometry x="260" y="170" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="b1" target="spine" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="ПО (микросервисы)&#xa;• чаттеринг, цепочки sync&#xa;• тяжёлые запросы к БД&#xa;• нет кэша там, где был Excel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left" parent="1" vertex="1">
+          <mxGeometry x="440" y="90" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.774;entryY=-0.021;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="b2" target="spine" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b3" value="Интеграция&#xa;• двойная запись As-Is/To-Be&#xa;• таймауты API (лаб, 1С)&#xa;• ретраи без идемпотентности" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left" parent="1" vertex="1">
+          <mxGeometry x="670" y="170" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.954;entryY=0.021;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="b3" target="spine" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.284;entryY=0.979;entryDx=0;entryDy=0;endArrow=none;strokeColor=#666666;strokeWidth=2;entryPerimeter=0;" edge="1" parent="1" source="b4" target="spine">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="Данные&#xa;• грязная миграция, дубли&#xa;• большой объём сканов&#xa;• разные модели доменов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left" parent="1" vertex="1">
+          <mxGeometry x="120" y="380" width="200" height="79" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.774;entryY=1.021;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="2" target="spine" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="Персонал&#xa;• эксплуатация K8s/API&#xa;• ошибки в гибридном режиме" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left" parent="1" vertex="1">
+          <mxGeometry x="270" y="480" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.513;entryY=0.979;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="b5" target="spine" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b6" value="Процессы&#xa;• нет чёткого cutover/rollback&#xa;• мало нагрузочных тестов&#xa;• слабый инцидент-менеджмент" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left" parent="1" vertex="1">
+          <mxGeometry x="700" y="430" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.956;entryY=1.063;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="b6" target="spine" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="440" as="sourcePoint" />
+            <mxPoint x="830" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend" value="Категории: &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Инфраструктура, ПО, Интеграция&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Данные, Персонал, Безопасность, Процессы&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#666666" parent="1" vertex="1">
+          <mxGeometry x="60" y="620" width="560" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2" value="&lt;font face=&quot;Helvetica&quot; style=&quot;font-size: 9px;&quot;&gt;Безопвсность&lt;br&gt;•&amp;nbsp;Проверка RBAC/ABAC на каждый запрос — рост latency&lt;br style=&quot;color: rgb(15, 17, 21);&quot;&gt;&lt;span style=&quot;color: rgb(15, 17, 21);&quot;&gt;•&lt;/span&gt;&lt;span style=&quot;color: rgb(15, 17, 21);&quot;&gt; Шифрование/дешифрование полей и файлов — нагрузка на CPU&lt;/span&gt;&lt;br style=&quot;color: rgb(15, 17, 21);&quot;&gt;&lt;span style=&quot;color: rgb(15, 17, 21);&quot;&gt;• Vault/KMS — потенциальная точка отказа и задержек&lt;/span&gt;&lt;br style=&quot;color: rgb(15, 17, 21);&quot;&gt;&lt;span style=&quot;color: rgb(15, 17, 21);&quot;&gt;• Аудит (логирование каждого доступа) — рост объёма логов и нагрузки на сеть/диски&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left" vertex="1" parent="1">
+          <mxGeometry x="490" y="469" width="200" height="131" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
